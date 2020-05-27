@@ -2,7 +2,7 @@
  - https://www.virtualbox.org/wiki/Linux_Downloads
  - https://www.vagrantup.com/intro/getting-started
 
-2. Clone the repository "git@github.com:sergpsw/vagrant-jenkins.git" to your machine in any folder. Copy YOUR dump.sql file in this folder. Open a terminal in this folder.
+2. Clone the repository "git@github.com:sergpsw/docker-LEMP.git" to your machine in any folder. Copy YOUR dump.sql file in this folder. Open a terminal in this folder.
 
 3. Copy '.env_examle' in '.env' and change variables.
 
