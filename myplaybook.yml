@@ -1,0 +1,48 @@
+---
+- hosts: web3
+  become: yes
+
+  tasks:
+    - name: Add Docker GPG apt Key
+      apt_key:
+        url: https://download.docker.com/linux/ubuntu/gpg
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Add Docker Repository
+      apt_repository:
+        repo: deb https://download.docker.com/linux/ubuntu bionic stable
+        state: present
+      when: ansible_os_family == "Debian"
+
+    - name: Update apt and install docker-ce
+      apt: update_cache=yes name=docker-ce state=latest
+      when: ansible_os_family == "Debian"
+
+    - name: Update apt and install docker-compose
+      apt: update_cache=yes name=docker-compose state=latest
+      when: ansible_os_family == "Debian"
+
+    - name: Build docker-compose.yml
+      action: shell docker-compose build
+
+    - name: Run docker-compose.yml
+      shell: docker-compose up -d 
+
+    - name: Import DB
+      shell: docker exec -T mysql mysql -uroot -proot ${DB_NAME} < ${DUMP_FILE}
+      ignore_errors: yes
+    #   notify: 
+    #     - Restart nginx
+    #     - Restart php
+    #     - Restart mysql
+
+    # handlers:
+    #   - name: Restart nginx
+    #     service: name=nginx state=restarted
+
+    #   - name: Restart php
+    #     service: name=php state=restarted
+
+    #   - name: Restart mysql
+    #     service: name=mysql state=restarted
