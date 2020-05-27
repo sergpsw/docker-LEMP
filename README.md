@@ -9,4 +9,5 @@
 4. Run the command 'vagrant up'. 
 
 5. Wait the virtual machine starts up, open in the browser. http://192.168.88.83:80
-NOTE. 80 is the default port, you specify the port that is registered in .env.
+
+NOTE! 80 is the default port, you specify the port that is registered in .env.
