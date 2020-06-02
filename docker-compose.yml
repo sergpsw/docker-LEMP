@@ -8,14 +8,11 @@ services:
             - ${SERVER_PORT}:80
         volumes:
             - ./docker/nginx:/etc/nginx/conf.d
-            # - ./docker/nginx:/etc/nginx/sites-available/default
-            # - ./docker/nginx:/etc/nginx/sites-enabled/default
-            - ./docker/logs/:/var/log/nginx/
+            - ./docker/logs/nginx:/var/log/nginx/ #
             - ./docker/www:/var/www/html
         restart: always
 
     php:
-        # image: php:7.2-fpm
         build:
             context: ./docker/php
         container_name: php-fpm

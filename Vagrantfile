@@ -17,7 +17,7 @@ Vagrant.configure("2") do |config|
 
     web3.vm.provision "ansible_local" do |ansible|
       ansible.playbook = "myplaybook.yml"
-      # ansible.compatibility_mode = "2.0"
+      ansible.extra_vars = { ansible_python_interpreter:"/usr/bin/python3" }
     end
 
   end

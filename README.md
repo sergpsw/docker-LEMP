@@ -2,9 +2,9 @@
  - https://www.virtualbox.org/wiki/Linux_Downloads
  - https://www.vagrantup.com/intro/getting-started
 
-2. Clone the repository "git@github.com:sergpsw/vagrant-jenkins.git" to your machine in any folder. Copy YOUR dump.sql file in this folder. Open a terminal in this folder.
+2. Clone the repository "change link" to your machine in any folder. Open a terminal in this folder.
 
-3. Copy '.env_examle' in '.env' and change variables.
+3. Copy '.env.examle' in '.env' and change variables.
 
 4. Run the command 'vagrant up'. 
 

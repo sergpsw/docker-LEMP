@@ -1,6 +1,5 @@
 .git
 .vagrant
 .env
-.dupm.sql
 docker/logs
 ubuntu-bionic-18.04-cloudimg-console.log

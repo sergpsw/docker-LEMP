@@ -9,15 +9,13 @@ if [[ "ls -a  /etc/debian_version" ]]
         echo "Python Ok"
       else
         apt-get update
-        apt-get install python -y
+        apt-get install python3 -y
     fi
     if [[ "ls -a /etc | grep ansible" ]]
       then
         echo "Ansible Ok"
       else
         apt update
-        # apt install software-properties-common
-        # apt-add-repository --yes --update ppa:ansible/ansible
         apt install ansible -y
     fi
   else
